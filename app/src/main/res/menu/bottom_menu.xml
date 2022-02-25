@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mainFragment" android:title="Movies" android:icon="@drawable/ic_round_local_movies_24" android:iconTint="@color/mainColor"/>
+    <item android:id="@+id/tvFragment" android:title="TvShows" android:icon="@drawable/ic_round_tv_24" android:iconTint="@color/mainColor"/>
+    <item android:id="@+id/searchFragment" android:title="Search" android:icon="@drawable/ic_round_search_24" android:iconTint="@color/mainColor"/>
+    <item android:id="@+id/profileFragment" android:title="Profile" android:icon="@drawable/ic_round_manage_accounts_24" android:iconTint="@color/mainColor"/>
+</menu>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<resources>
+    <style name="TextField.ListItem" />
+
+    <style name="TextField.Subtitle1">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="TextField.Body2">
+        <item name="android:textSize">15sp</item>
+    </style>
+    <style name="TextField.Header5">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+
+    <style name="TextField" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="TextField.White" parent="android:Widget.TextView">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="TextField.ListItem.PopularMovie.Genre">
+        <item name="android:textAppearance">@style/TextField.Body2</item>
+        <item name="android:layout_marginTop">@dimen/margin_extra_small</item>
+    </style>
+    <style name="TextField.ReleaseDate">
+        <item name="android:drawableStart">@drawable/ic_baseline_calendar_today_24</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:textColor">#6008090a</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextField.Rating" parent="TextField.White">
+        <item name="android:background">@drawable/background_chip</item>
+        <item name="android:backgroundTint">@color/mainColor</item>
+        <item name="android:drawableStart">@drawable/ic_baseline_star_24</item>
+        <item name="android:drawablePadding">@dimen/padding_popular_movie_drawable</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/padding_horizontal_chip</item>
+        <item name="android:paddingEnd">@dimen/padding_horizontal_chip</item>
+        <item name="android:paddingTop">@dimen/padding_vertical_chip</item>
+        <item name="android:paddingBottom">@dimen/padding_vertical_chip</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+    <style name="TextField.ListItem.PopularMovie.Title">
+        <item name="android:textAppearance">@style/TextField.Subtitle1</item>
+    </style>
+
+    <style name="TextField.ListItem.PopularMovie">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginStart">@dimen/margin_popular_movie_text</item>
+        <item name="android:layout_marginEnd">@dimen/margin_popular_movie_text</item>
+        <item name="android:layout_marginTop">@dimen/margin_popular_movie_text</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.mainFragment">
+
+    <data>
+            <variable
+                name="movie"
+                type="com.damla.intershipproject2.api.popularModel.Result" />
+
+    </data>
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipeRefleshLayout"
+
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="182dp"
+            android:layout_weight="1"
+            android:src="@drawable/card1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewNowPlaying"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xxl"
+            android:layout_marginTop="30dp"
+            android:text="Movies"
+            android:textColor="@color/black"
+            android:textSize="40dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"></TextView>
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager_now_playing_show"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewNowPlaying"
+            android:layout_marginTop="30dp"/>
+
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/textFieldRating"-->
+<!--            style="@style/TextField.Rating"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/margin_xxl"-->
+<!--            android:layout_marginTop="@dimen/margin_extra_large"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/view_pager_now_playing_show"-->
+<!--            />-->
+
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/textFieldTitle"-->
+<!--            style="@style/TextField.ListItem.PopularMovie.Title"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/margin_xxl"-->
+<!--            android:layout_marginTop="@dimen/margin_small"-->
+<!--            android:layout_marginEnd="@dimen/margin_xxl"-->
+<!--            android:textAppearance="@style/TextField.Header5"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/textFieldRating"-->
+<!--            tools:text="Joker" />-->
+
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:id="@+id/textFieldGenre"-->
+<!--            style="@style/TextField.ListItem.PopularMovie.Genre"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="@dimen/margin_xxl"-->
+<!--            android:layout_marginTop="@dimen/margin_small"-->
+<!--            android:layout_marginEnd="@dimen/margin_xxl"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/textFieldTitle"-->
+
+<!--            tools:text="Joker" />-->
+<!--        <View-->
+<!--            android:id="@+id/view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0.5dp"-->
+<!--            android:layout_marginStart="@dimen/margin_xxl"-->
+<!--            android:layout_marginTop="@dimen/margin_large"-->
+<!--            android:layout_marginEnd="@dimen/margin_xxl"-->
+<!--            android:background="@color/almost_black_60"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/textFieldGenre"-->
+<!--            />-->
+
+
+        <TextView
+            android:id="@+id/textViewPopular"
+            style="@style/TextAppearance.Material3.BodyLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xxl"
+            android:layout_marginTop="10dp"
+            android:text="Popular"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_pager_now_playing_show"></TextView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewPopular"
+            android:layout_marginTop="10dp"
+            ></androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>
