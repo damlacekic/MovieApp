@@ -1,7 +1,6 @@
 package com.damla.intershipproject2.api.nowPlayingModel
 
-import com.damla.intershipproject2.api.genreModel.Genre
-
+@Suppress("ConstructorParameterNaming")
 data class Result(
     val adult: Boolean,
     val backdrop_path: String?,

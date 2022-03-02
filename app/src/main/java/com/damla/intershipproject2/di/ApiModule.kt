@@ -30,17 +30,11 @@ object ApiModule {
         ).build().create(MovieService::class.java)
 
 
-
     @Singleton
     @Provides
     fun provideApiRepository(
-        service : MovieService
-    ):ApiRepository{
+        service: MovieService
+    ): ApiRepository {
         return ApiRepository(service)
     }
-
-
-
-
-
 }

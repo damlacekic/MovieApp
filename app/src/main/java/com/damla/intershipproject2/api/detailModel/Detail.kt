@@ -1,5 +1,6 @@
 package com.damla.intershipproject2.api.detailModel
 
+@Suppress("ConstructorParameterNaming")
 data class Detail(
     val adult: Boolean,
     val backdrop_path: String?,

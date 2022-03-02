@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.detailFragment">
 
     <data>
+
         <variable
             name="detail"
             type="com.damla.intershipproject2.api.detailModel.Detail" />
 
     </data>
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clipToPadding="false"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-
-        >
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image_view_poster"
+                loadingImage="@{detail.backdrop_path}"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:scaleType="fitXY"
-                loadingImage="@{detail.backdrop_path}"
                 tools:src="@tools:sample/avatars" />
 
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:layout_marginTop="10dp"
                 android:id="@+id/text_view_rating"
                 style="@style/TextField.Rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_xxl"
+                android:layout_marginTop="10dp"
                 tools:text="9.9" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -47,10 +47,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_xxl"
                 android:layout_marginEnd="32dp"
-                android:textSize="30dp"
-                android:textStyle="bold"
                 android:text="@{detail.title}"
                 android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold"
                 tools:text="Game of Thrones" />
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -58,23 +58,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_xxl"
-                android:textSize="15dp"
                 android:textColor="@color/black"
+                android:textSize="15dp"
                 tools:text="Action, Adventure, Drama" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="10dp"
-                >
+                android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/text_view_runtime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableStart="@drawable/ic_clock"
                     android:layout_marginStart="@dimen/margin_xxl"
+                    android:drawableStart="@drawable/ic_clock"
                     android:textColor="@color/almost_black_60"
                     tools:text=" 57 min" />
 
@@ -84,15 +83,15 @@
                     android:layout_height="12dp"
                     android:layout_marginStart="@dimen/margin_show_detail_time"
                     android:layout_marginEnd="@dimen/margin_show_detail_time"
-                    android:background="#6008090a"
-                    />
+                    android:background="#6008090a" />
+
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/text_view_release_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/margin_show_detail_time"
-                    android:text="@{detail.release_date}"
                     android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+                    android:text="@{detail.release_date}"
                     tools:text="04.01.2019" />
 
             </LinearLayout>
@@ -109,18 +108,18 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_height="250dp"
                 android:layout_marginStart="@dimen/margin_xxl"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="@dimen/margin_xxl"
+
                 android:text="@{detail.overview}"
-                tools:text="While racing to a boxing match, Frank, Mike, John and Rey get more than they bargained for. A wrong turn lands them directly in the path of Fallon, a vicious, wise-cracking drug lord. After accidentally witnessing Fallon murder a disloyal henchman, the four become his unwilling prey in a savage game of cat and mouse as they are mercilessly stalked through the urban jungle in this taut suspense drama."
-                ></TextView>
+                tools:text="While racing to a boxing match, Frank, Mike, John and Rey get more than they bargained for. A wrong turn lands them directly in the path of Fallon, a vicious, wise-cracking drug lord. After accidentally witnessing Fallon murder a disloyal henchman, the four become his unwilling prey in a savage game of cat and mouse as they are mercilessly stalked through the urban jungle in this taut suspense drama."></TextView>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </ScrollView>
 
 
 </layout>

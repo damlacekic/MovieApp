@@ -1,7 +1,5 @@
 package com.damla.intershipproject2.api
 
-import com.damla.intershipproject2.api.nowPlayingModel.NowPlaying
-import retrofit2.Call
 import javax.inject.Inject
 import javax.inject.Singleton
 

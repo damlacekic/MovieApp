@@ -18,48 +18,37 @@ import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
-    private val mViewModel : DetailViewModel by viewModels()
-    private lateinit var binding : FragmentDetailBinding
-    private lateinit var detail : Detail
-    private  var genreNameList : ArrayList<String>? = null
-    private lateinit var genreList : List<Genre>
+    private val mViewModel: DetailViewModel by viewModels()
+    private lateinit var binding: FragmentDetailBinding
+    private lateinit var genreList: List<Genre>
     private val args by navArgs<DetailFragmentArgs>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentDetailBinding.inflate(inflater,container,false)
+        binding = FragmentDetailBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
-        val id  : Int = args.movieId
+        val id: Int = args.movieId
         lifecycleScope.launchWhenCreated {
             mViewModel.getDetails(id).collect { dataState ->
-                when (dataState){
-                    is DataState.Success ->{
+                when (dataState) {
+                    is DataState.Success -> {
                         binding.detail = dataState.data
                         binding.textViewRating.text = dataState.data.vote_average.toString()
                         binding.textViewRuntime.text = dataState.data.runtime.toString() + " min"
                         genreList = dataState.data.genres
-                        if (::genreList.isInitialized){
-                            if(!genreList.isEmpty()){
+                        if (::genreList.isInitialized) {
+                            if (!genreList.isEmpty()) {
 
-                                binding.textViewGenres.text = genreList.joinToString(separator = ", ", limit = 3, truncated = "") { it.name }
-
-
+                                binding.textViewGenres.text = genreList.joinToString(
+                                    separator = ", ",
+                                    limit = 3,
+                                    truncated = ""
+                                ) { it.name }
 
                             }
 
                         }
-                        println(genreNameList?.joinToString())
-
-
-//                            if (::genres.isInitialized) {
-//                                for (genre in dataState.data.genres) {
-//                                    genres.add(genre.name)
-//                                }
-//                            }
-//                                val stringGenres = genres.joinToString ()
-//                                binding.textViewGenres.text = stringGenres
-
 
 
                     }
@@ -70,11 +59,6 @@ class DetailFragment : Fragment() {
 
             }
         }
-
-
-
         return binding.root
     }
-
-
 }

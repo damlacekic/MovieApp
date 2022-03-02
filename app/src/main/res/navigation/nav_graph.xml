@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.damla.intershipproject2.fragments.movieFragment.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
@@ -33,18 +33,10 @@
         android:id="@+id/detailFragment"
         android:name="com.damla.intershipproject2.fragments.detailFragment.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" >
+        tools:layout="@layout/fragment_detail">
         <argument
             android:name="movie_id"
             app:argType="integer" />
     </fragment>
-    <fragment
-        android:id="@+id/splashScreenFragment"
-        android:name="com.damla.intershipproject2.fragments.SplashScreenFragment"
-        android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
-        <action
-            android:id="@+id/action_splashScreenFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
+
 </navigation>

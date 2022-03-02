@@ -13,9 +13,8 @@ interface MovieService {
     suspend fun getNowplayingMovies(): NowPlaying
 
     @GET("popular?api_key=0562a21d4783415360efdb12ffb2eea0&language=en-US")
-    suspend fun getPopularMovies() : Popular
+    suspend fun getPopularMovies(): Popular
 
-    @GET("{movie_id}?api_key=0562a21d4783415360efdb12ffb2eea0&language=en-US")
-    suspend fun getMovieDetail(@Path("movie_id") movie_id : Int) :Detail
-
+    @GET("{movieId}?api_key=0562a21d4783415360efdb12ffb2eea0&language=en-US")
+    suspend fun getMovieDetail(@Path("movieId") movieId: Int): Detail
 }

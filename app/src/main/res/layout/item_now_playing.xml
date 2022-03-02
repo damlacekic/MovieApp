@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="movieNowPlayingDataResults"
             type="com.damla.intershipproject2.api.nowPlayingModel.Result" />
@@ -11,8 +13,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginEnd="79dp"
-        android:layout_marginStart="79dp">
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="79dp">
 
         <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -31,18 +33,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
+
             <androidx.appcompat.widget.AppCompatImageView
+                loadingImage="@{movieNowPlayingDataResults.poster_path}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                loadingImage="@{movieNowPlayingDataResults.poster_path}"
-                android:src="@drawable/ic_round_manage_accounts_24"
+                android:src="@drawable/ic_outline_downloading_24"
 
                 />
 
-
-
-
         </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

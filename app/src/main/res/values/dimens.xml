@@ -55,5 +55,6 @@
 
     <!-- Login -->
     <dimen name="margin_login_image_view_movee">100dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

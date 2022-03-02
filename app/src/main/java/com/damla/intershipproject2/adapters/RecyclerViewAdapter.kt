@@ -9,12 +9,13 @@ import com.damla.intershipproject2.databinding.ItemRecyclerviewBinding
 import com.damla.intershipproject2.fragments.movieFragment.MainFragmentDirections
 import kotlinx.android.synthetic.main.fragment_detail.view.*
 
+class RecyclerViewAdapter(private val movieList: List<Result>) :
+    RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 
-class RecyclerViewAdapter(private val movieList: List<Result>) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(){
 
-
-    inner class ViewHolder(val binding : ItemRecyclerviewBinding):RecyclerView.ViewHolder(binding.root){
-        fun bind(item: Result){
+    inner class ViewHolder(val binding: ItemRecyclerviewBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: Result) {
             binding.movie = item
             binding.textViewAverage.text = item.vote_average.toString()
 
@@ -23,7 +24,7 @@ class RecyclerViewAdapter(private val movieList: List<Result>) : RecyclerView.Ad
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val listItemBinding = ItemRecyclerviewBinding.inflate(inflater,parent,false)
+        val listItemBinding = ItemRecyclerviewBinding.inflate(inflater, parent, false)
         return ViewHolder(listItemBinding)
     }
 
@@ -39,6 +40,6 @@ class RecyclerViewAdapter(private val movieList: List<Result>) : RecyclerView.Ad
     }
 
     override fun getItemCount(): Int {
-       return movieList.size
+        return movieList.size
     }
 }

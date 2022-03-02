@@ -24,11 +24,11 @@ class MainFragment : Fragment() {
 
     private val mViewModel: MainViewModel by viewModels()
     private lateinit var manager: RecyclerView.LayoutManager
-    private lateinit var popularMovieList:List<Result>
-    private lateinit var nowPlayingMovieList:List<com.damla.intershipproject2.api.nowPlayingModel.Result>
-    private lateinit var mViewPagerAdaptor : ViewPagerAdapter
+    private lateinit var popularMovieList: List<Result>
+    private lateinit var nowPlayingMovieList: List<com.damla.intershipproject2.api.nowPlayingModel.Result>
+    private lateinit var mViewPagerAdaptor: ViewPagerAdapter
+    private lateinit var binding: FragmentMainBinding
 
-    private lateinit var binding : FragmentMainBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +36,7 @@ class MainFragment : Fragment() {
     ): View? {
         binding = FragmentMainBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
+        val viewPagerPageLimit = 3
         manager = LinearLayoutManager(requireContext())
         lifecycleScope.launchWhenCreated {
             mViewModel.getNowPlaying().collect { dataState ->
@@ -43,20 +44,24 @@ class MainFragment : Fragment() {
                     is DataState.Success -> {
                         val nowPlayingMovieData = dataState.data
                         nowPlayingMovieList = nowPlayingMovieData.results
-                        if(::nowPlayingMovieList.isInitialized){
-                            if(!nowPlayingMovieList.isEmpty()){
+                        if (::nowPlayingMovieList.isInitialized) {
+                            if (!nowPlayingMovieList.isEmpty()) {
                                 mViewPagerAdaptor = ViewPagerAdapter(nowPlayingMovieList)
                                 binding.viewPagerNowPlayingShow.adapter = mViewPagerAdaptor
-                                binding.viewPagerNowPlayingShow.offscreenPageLimit = 3
-                                binding.viewPagerNowPlayingShow.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-                                val pageMArgin = resources.getDimensionPixelSize(R.dimen.margin_now_playing_page)
-                                val pageOffset = resources.getDimensionPixelOffset(R.dimen.offset_now_playing_page)
+                                binding.viewPagerNowPlayingShow.offscreenPageLimit =
+                                    viewPagerPageLimit
+                                binding.viewPagerNowPlayingShow.orientation =
+                                    ViewPager2.ORIENTATION_HORIZONTAL
+                                val pageMargin =
+                                    resources.getDimensionPixelSize(R.dimen.margin_now_playing_page)
+                                val pageOffset =
+                                    resources.getDimensionPixelOffset(R.dimen.offset_now_playing_page)
                                 binding.viewPagerNowPlayingShow.setPageTransformer { page, position ->
-                                    val offset = -(2* pageOffset + pageMArgin) * position
+                                    val offset = -(2 * pageOffset + pageMargin) * position
                                     page.translationX = offset
                                 }
 
-                               //binding.viewPagerNowPlayingShow.adapter = ViewPagerAdapter(nowPlayingMovieList)
+
                             }
                         }
 
@@ -70,12 +75,12 @@ class MainFragment : Fragment() {
 
         lifecycleScope.launchWhenCreated {
             mViewModel.getPopular().collect { dataState ->
-                when(dataState){
-                    is DataState.Success ->{
+                when (dataState) {
+                    is DataState.Success -> {
                         val popularMovieData = dataState.data
                         popularMovieList = popularMovieData.results
-                        if(::popularMovieList.isInitialized){
-                            if(!popularMovieList.isEmpty()){
+                        if (::popularMovieList.isInitialized) {
+                            if (!popularMovieList.isEmpty()) {
                                 binding.recyclerView.apply {
                                     adapter = RecyclerViewAdapter(popularMovieList)
                                     layoutManager = manager
@@ -94,10 +99,6 @@ class MainFragment : Fragment() {
             }
         }
 
-//        }
-
         return binding.root
     }
-
-
 }

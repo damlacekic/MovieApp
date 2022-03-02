@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import javax.inject.Inject
 
-class MainActivityViewModel  @Inject constructor(
+class MainActivityViewModel @Inject constructor(
     application: Application
-) : AndroidViewModel(application) {
-}
+) : AndroidViewModel(application)

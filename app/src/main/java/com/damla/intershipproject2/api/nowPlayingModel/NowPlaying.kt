@@ -1,5 +1,6 @@
 package com.damla.intershipproject2.api.nowPlayingModel
 
+@Suppress("ConstructorParameterNaming")
 data class NowPlaying(
     val dates: Dates,
     val page: Int,

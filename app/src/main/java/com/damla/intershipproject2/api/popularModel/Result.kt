@@ -1,5 +1,6 @@
 package com.damla.intershipproject2.api.popularModel
 
+@Suppress("ConstructorParameterNaming")
 data class Result(
     val adult: Boolean,
     val backdrop_path: String?,

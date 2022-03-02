@@ -10,13 +10,3 @@ import com.squareup.picasso.Picasso
 fun ImageView.loadImage(moviePhoto:String?){
     this.load("https://image.tmdb.org/t/p/original" + moviePhoto)
 }
-
-//@BindingAdapter("loadingImage")
-//fun ImageView.loadImage(url: String) {
-//    Picasso.get().load(url).into(this)
-//}
-
-//@BindingAdapter("ToString")
-//fun (rate : Double): String {
-//    return rate.toString()
-//}

@@ -4,5 +4,6 @@
     <enableFormatting>true</enableFormatting>
     <buildUponDefaultConfig>true</buildUponDefaultConfig>
     <treatAsError>true</treatAsError>
+    <configPaths>D:\Android\IntershipProject2\.idea\detekt.xml</configPaths>
   </component>
 </project>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.damla.intershipproject2.activity.MainActivityViewModel" />
@@ -14,13 +15,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".activity.MainActivity">
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:id="@+id/bottomNavigation"
-            app:itemTextColor="@color/mainColor"
             app:itemIconTint="@color/mainColor"
+            app:itemTextColor="@color/mainColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,8 +39,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/nav_graph" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
