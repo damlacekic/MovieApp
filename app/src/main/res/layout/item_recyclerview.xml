@@ -9,9 +9,6 @@
             name="movie"
             type="com.damla.intershipproject2.api.popularModel.Result" />
 
-        <variable
-            name="genre"
-            type="com.damla.intershipproject2.api.genreModel.Genre" />
 
     </data>
 
@@ -56,7 +53,6 @@
                 style="@style/TextField.ListItem.PopularMovie.Genre"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@{genre.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/image_view_poster"
                 app:layout_constraintTop_toBottomOf="@id/text_view_title"
