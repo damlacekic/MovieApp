@@ -18,6 +18,7 @@ Technologies That Used:
 + LiveData
 + Detekt
 + Coil
++ BottomNavigationBar
 
 ![deneme3](https://user-images.githubusercontent.com/72108390/156552496-b467a67a-9de4-4980-9f36-0eac89903c6d.png)
 
@@ -36,3 +37,10 @@ And a recyclerview with popular movies
 When we click one of the movies on recyclerview or viewpager, we see the details of the movie
 
 ![detailScreen](https://user-images.githubusercontent.com/72108390/156553373-d6839466-423d-4ae2-a03c-9d44b208947d.png)
+
+The other sections from the bottom navigation bar are unavailable !!!
+
+To run the application, an API key from https://developers.themoviedb.org/3/getting-started/introduction should be supplied.
+
+
+
